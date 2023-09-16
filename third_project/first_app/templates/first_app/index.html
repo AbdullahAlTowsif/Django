@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "{% static 'first_app/css/first.css' %}"/>
+</head>
+<body>
+
+    {# Django Template Language if-else #}
+
+    {% comment %} <h1>we are inside app</h1>
+    <h1>Author name: {{author}}</h1>
+    {% if marks >= 90 %}
+    <p>vai tumi golden A+ paiso</p>
+    {% elif marks >= 70 and marks <= 79 %}
+    <p>vai tumi pass</p>
+    {% else %}
+    <p>vai tumi fail</p>
+    {% endif %} {% endcomment %}
+
+    {# Djaongo Template Language for loop #}
+
+    {% comment %} <table border="1" width = 500>
+        <tr>
+            <th>ID</th>
+            <th>Courses</th>
+            <th>Teacher</th>
+        </tr>
+
+            {% for i in courses %}
+            <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.course}}</td>
+            <td>{{i.teacher}}</td>
+            </tr>
+            {% endfor %}
+
+    </table> {% endcomment %}
+
+    <h1> We are inside app</h1>
+    <h1>Author name: {{name}}</h1>
+    <img src="{% static 'first_app/images/img2.jpeg' %}" alt="bird">
+
+    {# Filters in DTL #}
+    {# {{ variable_name | filter_name }} #}
+
+    {# Add value #}
+    <h1>{{marks | add:"2"}}</h1>
+    {# Divisible Check #}
+    <h1>{{marks | divisibleby:"2"}}</h1>
+    {# Length #}
+    <h1>{{name | length}}</h1>
+    {# Word Count #}
+    <h1>{{name | wordcount}}</h1>
+    {# Truncate Words #}
+    <h1>{{blog |truncatewords:5}}</h1>
+    <h1>{{blog |truncatechars:5}}</h1>
+    {# Make List #}
+    <h1>{{name | make_list }}</h1>
+    {# Upper Case #}
+    <h1>{{name | upper }}</h1>
+    {# Lower Case #}
+    <h1>{{name | lower }}</h1>
+    {# Join #}
+    <h1>{{list | join:"," }}</h1>
+    
+</body>
+</html>
+
+{# This is a single-line comment in Django template #}
