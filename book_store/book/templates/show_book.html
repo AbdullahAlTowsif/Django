@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="width: 80%;margin: auto;">
+    <h1>List of Books</h1>
+    {% if data %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Book Name</th>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{item.id}}</td>
+                <td><a href="{% url 'book_detail' item.id %}">{{item.book_name}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h3>No data Available</h3>
+    {% endif %}
+</div>
+{% endblock %}
