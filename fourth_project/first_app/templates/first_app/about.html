@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% load first_tags %}
+
+{% block title %} About Page {% endblock %}
+{% block contest %} About page 
+<h1>{{ author|change_name:'change' }}</h1>
+{% endblock %}
